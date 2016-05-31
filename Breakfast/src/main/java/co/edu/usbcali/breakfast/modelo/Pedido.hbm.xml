@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2016 10:38:32 AM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.breakfast.modelo.Pedido" table="pedido" schema="public" optimistic-lock="version">
+        <id name="codigoPedido" type="java.lang.Long">
+            <column name="codigo_pedido" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="co.edu.usbcali.breakfast.modelo.Usuario" fetch="select">
+            <column name="codigo_usuario" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="java.util.Date">
+            <column name="fecha" length="13" not-null="true" />
+        </property>
+        <set name="pedidoproductos" table="pedidoproducto" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigo_pedido" not-null="true" />
+            </key>
+            <one-to-many class="co.edu.usbcali.breakfast.modelo.Pedidoproducto" />
+        </set>
+    </class>
+</hibernate-mapping>

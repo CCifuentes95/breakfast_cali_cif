@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 31/05/2016 10:38:32 AM by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="co.edu.usbcali.breakfast.modelo.Pedidoproducto" table="pedidoproducto" schema="public" optimistic-lock="version">
+        <id name="codigoPedidoProducto" type="java.lang.Long">
+            <column name="codigo_pedido_producto" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pedido" class="co.edu.usbcali.breakfast.modelo.Pedido" fetch="select">
+            <column name="codigo_pedido" not-null="true" />
+        </many-to-one>
+        <many-to-one name="producto" class="co.edu.usbcali.breakfast.modelo.Producto" fetch="select">
+            <column name="codigo_producto" not-null="true" />
+        </many-to-one>
+        <property name="codigoUsuario" type="java.lang.Long">
+            <column name="codigo_usuario" not-null="true" />
+        </property>
+        <property name="codigoTipoproducto" type="java.lang.Long">
+            <column name="codigo_tipoproducto" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
