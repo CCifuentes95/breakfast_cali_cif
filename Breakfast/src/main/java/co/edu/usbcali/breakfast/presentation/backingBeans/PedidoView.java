@@ -57,6 +57,11 @@ public class PedidoView implements Serializable {
     private PedidoDTO selectedPedido;
     private Pedido entity;
     private boolean showDialog;
+    
+    //
+    
+    
+    //
     @ManagedProperty(value = "#{BusinessDelegatorView}")
     private IBusinessDelegatorView businessDelegatorView;
 
@@ -423,9 +428,5 @@ public class PedidoView implements Serializable {
         this.showDialog = showDialog;
     }
     
-    public String regresar(){
-
-    	return "/login.xhtml";
-    
-    }
+   
 }

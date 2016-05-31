@@ -16,9 +16,7 @@
 				<div class="ui-fluid">
 				<p:panelGrid columns="2">
 					<h:outputText value="Nombre" />
-					<p:inputText placeholder="Nombre" />
-					<h:outputText value="Apellido" />
-					<p:inputText placeholder="Apellido" />
+					<p:inputText placeholder="Nombre" />					
 					<h:outputText value="Correo" />
 					<p:inputText placeholder="Correo" />
 					<h:outputText value="Usuario" />
@@ -29,9 +27,9 @@
 					<p:password placeholder="Contraseña" />
 				</p:panelGrid>
 				<p:commandButton styleClass="btn btn-lg btn-primary btn-block"
-					value="Regisrarse" update="msgGrowl" />
+					value="Regisrarse" update="msgGrowl" action="#{registrarseView.regresar}" />
 				<p:commandButton styleClass="btn btn-lg btn-primary btn-block"
-					value="Regresar" update="msgGrowl, form" action="#{pedidoView.regresar}" />
+					value="Regresar" update="msgGrowl, form" action="#{registrarseView.regresar}" />
 			</div>	
 			</p:panel>
 					
