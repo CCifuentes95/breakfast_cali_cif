@@ -1,5 +1,7 @@
 package co.edu.usbcali.breakfast.presentation.backingBeans;
 
+import co.edu.usbcali.breakfast.modelo.Usuario;
+import co.edu.usbcali.breakfast.presentation.businessDelegate.BusinessDelegatorView;
 import co.edu.usbcali.breakfast.utilities.*;
 
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +21,8 @@ import javax.faces.bean.ViewScoped;
 public class LoginView {
     private String userId;
     private String password;
+    
+    
     @ManagedProperty(value = "#{authenticationManager}")
     private AuthenticationManager authenticationManager = null;
 
@@ -47,7 +51,7 @@ public class LoginView {
         this.userId = userId;
     }
 
-    public String login() {
+    public String login() throws Exception {
         try {
             Authentication request = new UsernamePasswordAuthenticationToken(this.getUserId(),
                     this.getPassword());
@@ -57,13 +61,15 @@ public class LoginView {
 
             FacesUtils.getHttpSession(true)
                       .setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
+            
+  
         } catch (AuthenticationException e) {
             FacesUtils.addErrorMessage("authfailed login or password");
 
             return "/login.xhtml";
         }
 
-        return "/XHTML/initialMenu.xhtml";
+        return "/XHTML/perfil.xhtml";
     }
     
     public String registrarse() {       
