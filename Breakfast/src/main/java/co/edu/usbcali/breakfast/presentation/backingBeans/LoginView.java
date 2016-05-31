@@ -65,4 +65,9 @@ public class LoginView {
 
         return "/XHTML/initialMenu.xhtml";
     }
+    
+    public String registrarse() {       
+
+        return "/XHTML/registrarse.xhtml";
+    }
 }
