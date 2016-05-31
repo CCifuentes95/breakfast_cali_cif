@@ -6,7 +6,7 @@
     <class name="co.edu.usbcali.breakfast.modelo.Pedido" table="pedido" schema="public" optimistic-lock="version">
         <id name="codigoPedido" type="java.lang.Long">
             <column name="codigo_pedido" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="usuario" class="co.edu.usbcali.breakfast.modelo.Usuario" fetch="select">
             <column name="codigo_usuario" not-null="true" />

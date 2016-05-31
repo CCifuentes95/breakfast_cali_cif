@@ -73,10 +73,10 @@ public class TipoproductoLogic implements ITipoproductoLogic {
         log.debug("saving Tipoproducto instance");
 
         try {
-            if (entity.getCodigoTipoproducto() == null) {
-                throw new ZMessManager().new EmptyFieldException(
-                    "codigoTipoproducto");
-            }
+//            if (entity.getCodigoTipoproducto() == null) {
+//                throw new ZMessManager().new EmptyFieldException(
+//                    "codigoTipoproducto");
+//            }
 
             if (entity.getDescripcion() == null) {
                 throw new ZMessManager().new EmptyFieldException("descripcion");
@@ -89,9 +89,9 @@ public class TipoproductoLogic implements ITipoproductoLogic {
                     "descripcion");
             }
 
-            if (getTipoproducto(entity.getCodigoTipoproducto()) != null) {
-                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
-            }
+//            if (getTipoproducto(entity.getCodigoTipoproducto()) != null) {
+//                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
+//            }
 
             tipoproductoDAO.save(entity);
 

@@ -6,31 +6,33 @@
 	
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{facesContext.externalContext.request.contextPath}/css/stylelogin.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	</h:head>		
 	
 	<h:body>
-		<h:form>
+		<h:form id="form">
 			<p:panel header="Registrate">
 				<p:growl id="msgGrowl" autoUpdate="true" showDetail="false"/>
+				<div class="ui-fluid">
 				<p:panelGrid columns="2">
-					<h:outputText value="Nombre"/>
-					<p:inputText placeholder="Nombre"/>
-					<h:outputText value="Apellido"/>
-					<p:inputText placeholder="Apellido"/>
-					<h:outputText value="Correo"/>
-					<p:inputText placeholder="Correo"/>
-					<h:outputText value="Usuario"/>
-					<p:inputText placeholder="Usuario"/>
-					<h:outputText value="Contraseña"/>
-					<p:password placeholder="Contraseña"/>
-					<h:outputText value="Repita la Contraseña"/>		
-					<p:password placeholder="Contraseña"/>					
+					<h:outputText value="Nombre" />
+					<p:inputText placeholder="Nombre" />
+					<h:outputText value="Apellido" />
+					<p:inputText placeholder="Apellido" />
+					<h:outputText value="Correo" />
+					<p:inputText placeholder="Correo" />
+					<h:outputText value="Usuario" />
+					<p:inputText placeholder="Usuario" />
+					<h:outputText value="Contraseña" />
+					<p:password placeholder="Contraseña" />
+					<h:outputText value="Repita la Contraseña" />
+					<p:password placeholder="Contraseña" />
 				</p:panelGrid>
-				<p:commandButton styleClass="btn btn-lg btn-primary btn-block" value="Regisrarse"   update="msgGrowl"/>
-	     		 <p:commandButton styleClass="btn btn-lg btn-primary btn-block" value="Regresar"   update="msgGrowl"/>
-	     			
+				<p:commandButton styleClass="btn btn-lg btn-primary btn-block"
+					value="Regisrarse" update="msgGrowl" />
+				<p:commandButton styleClass="btn btn-lg btn-primary btn-block"
+					value="Regresar" update="msgGrowl, form" action="#{pedidoView.regresar}" />
+			</div>	
 			</p:panel>
 					
 		

@@ -89,10 +89,10 @@ public class PedidoproductoLogic implements IPedidoproductoLogic {
                 throw new ZMessManager().new ForeignException("producto");
             }
 
-            if (entity.getCodigoPedidoProducto() == null) {
-                throw new ZMessManager().new EmptyFieldException(
-                    "codigoPedidoProducto");
-            }
+//            if (entity.getCodigoPedidoProducto() == null) {
+//                throw new ZMessManager().new EmptyFieldException(
+//                    "codigoPedidoProducto");
+//            }
 
             if (entity.getCodigoTipoproducto() == null) {
                 throw new ZMessManager().new EmptyFieldException(
@@ -114,9 +114,9 @@ public class PedidoproductoLogic implements IPedidoproductoLogic {
                     "codigoProducto_Producto");
             }
 
-            if (getPedidoproducto(entity.getCodigoPedidoProducto()) != null) {
-                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
-            }
+//            if (getPedidoproducto(entity.getCodigoPedidoProducto()) != null) {
+//                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
+//            }
 
             pedidoproductoDAO.save(entity);
 

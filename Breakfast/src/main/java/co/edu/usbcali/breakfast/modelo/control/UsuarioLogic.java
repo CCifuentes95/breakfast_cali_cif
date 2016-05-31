@@ -83,10 +83,10 @@ public class UsuarioLogic implements IUsuarioLogic {
                 throw new ZMessManager().new NotValidFormatException("clave");
             }
 
-            if (entity.getCodigoUsuario() == null) {
-                throw new ZMessManager().new EmptyFieldException(
-                    "codigoUsuario");
-            }
+//            if (entity.getCodigoUsuario() == null) {
+//                throw new ZMessManager().new EmptyFieldException(
+//                    "codigoUsuario");
+//            }
 
             if (entity.getDireccion() == null) {
                 throw new ZMessManager().new EmptyFieldException("direccion");
@@ -129,9 +129,9 @@ public class UsuarioLogic implements IUsuarioLogic {
                 throw new ZMessManager().new NotValidFormatException("usuario");
             }
 
-            if (getUsuario(entity.getCodigoUsuario()) != null) {
-                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
-            }
+//            if (getUsuario(entity.getCodigoUsuario()) != null) {
+//                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
+//            }
 
             usuarioDAO.save(entity);
 

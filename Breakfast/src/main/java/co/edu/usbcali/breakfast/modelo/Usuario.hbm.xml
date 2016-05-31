@@ -6,7 +6,7 @@
     <class name="co.edu.usbcali.breakfast.modelo.Usuario" table="usuario" schema="public" optimistic-lock="version">
         <id name="codigoUsuario" type="java.lang.Long">
             <column name="codigo_usuario" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="nombre" type="java.lang.String">
             <column name="nombre" not-null="true" />

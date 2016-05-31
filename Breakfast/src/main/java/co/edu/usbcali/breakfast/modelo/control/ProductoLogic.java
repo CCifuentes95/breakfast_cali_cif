@@ -84,10 +84,10 @@ public class ProductoLogic implements IProductoLogic {
                 throw new ZMessManager().new ForeignException("tipoproducto");
             }
 
-            if (entity.getCodigoProducto() == null) {
-                throw new ZMessManager().new EmptyFieldException(
-                    "codigoProducto");
-            }
+//            if (entity.getCodigoProducto() == null) {
+//                throw new ZMessManager().new EmptyFieldException(
+//                    "codigoProducto");
+//            }
 
             if (entity.getDescripcion() == null) {
                 throw new ZMessManager().new EmptyFieldException("descripcion");
@@ -124,9 +124,9 @@ public class ProductoLogic implements IProductoLogic {
                     "codigoTipoproducto_Tipoproducto");
             }
 
-            if (getProducto(entity.getCodigoProducto()) != null) {
-                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
-            }
+//            if (getProducto(entity.getCodigoProducto()) != null) {
+//                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
+//            }
 
             productoDAO.save(entity);
 

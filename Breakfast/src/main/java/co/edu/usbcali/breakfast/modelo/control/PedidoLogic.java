@@ -84,9 +84,9 @@ public class PedidoLogic implements IPedidoLogic {
                 throw new ZMessManager().new ForeignException("usuario");
             }
 
-            if (entity.getCodigoPedido() == null) {
-                throw new ZMessManager().new EmptyFieldException("codigoPedido");
-            }
+//            if (entity.getCodigoPedido() == null) {
+//                throw new ZMessManager().new EmptyFieldException("codigoPedido");
+//            }
 
             if (entity.getFecha() == null) {
                 throw new ZMessManager().new EmptyFieldException("fecha");
@@ -97,9 +97,9 @@ public class PedidoLogic implements IPedidoLogic {
                     "codigoUsuario_Usuario");
             }
 
-            if (getPedido(entity.getCodigoPedido()) != null) {
-                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
-            }
+//            if (getPedido(entity.getCodigoPedido()) != null) {
+//                throw new ZMessManager(ZMessManager.ENTITY_WITHSAMEKEY);
+//            }
 
             pedidoDAO.save(entity);
 
